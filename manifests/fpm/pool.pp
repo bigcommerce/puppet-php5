@@ -1,6 +1,8 @@
 define php5::fpm::pool(
   $prefix           = '',
   $listen           = '127.0.0.1',
+  $listen_owner     = '',
+  $listen_group     = '',
   $port             = '9000',
   $user             = 'www-data',
   $group            = 'www-data',
