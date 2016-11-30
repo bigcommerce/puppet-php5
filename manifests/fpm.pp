@@ -45,7 +45,7 @@ class php5::fpm(
     ensure  => directory,
     owner   => root,
     group   => root,
-    mode    => '1777',
+    mode    => '1775',
     require => Package['php5-fpm'],
   }
 
