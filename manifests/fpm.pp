@@ -44,7 +44,7 @@ class php5::fpm(
   file { "$log_directory":
     ensure  => directory,
     owner   => root,
-    group   => www-data,
+    group   => root,
     mode    => '1775',
     require => Package['php5-fpm'],
   }
