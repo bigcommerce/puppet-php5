@@ -5,7 +5,7 @@ define php5::config(
   $setting = '',
   $ensure  = 'present'
 ) {
-  if ($setting) {
+  if (!empty($setting)) {
     $use_setting = $setting
   }
   else {

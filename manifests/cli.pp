@@ -8,13 +8,15 @@ class php5::cli(
     before => Package['php5-common'],
   }
 
-  $config_changes += [
+  $cli_config_changes = [
     'set display_errors On',
   ]
 
+  $real_config_changes = concat($config_changes, $cli_config_changes);
+
   augeas { 'php.ini/cli/PHP':
     context => '/files/etc/php5/cli/php.ini/PHP/',
-    changes => $config_changes,
+    changes => $real_config_changes,
     require => Package['php5-cli'],
   }
 }
